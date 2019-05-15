@@ -11,9 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".view.ActivityForPrefsFragment"></activity>
         <activity
             android:name=".view.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"><!--needed for Nav Drawer-->
+            android:theme="@style/AppTheme.NoActionBar"> <!-- needed for Nav Drawer -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

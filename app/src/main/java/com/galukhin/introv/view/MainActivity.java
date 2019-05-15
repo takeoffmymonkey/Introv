@@ -1,5 +1,6 @@
 package com.galukhin.introv.view;
 
+import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +16,8 @@ import android.view.MenuItem;
 import com.galukhin.introv.R;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    private String TAG = "INTROVERT:" + getClass().getSimpleName();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +86,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 // Handle navigation view item clicks here.
+        Intent intent = null;
+
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
@@ -92,7 +97,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_templates) {
 
         } else if (id == R.id.nav_settings) {
-
+            intent = new Intent(MainActivity.this, ActivityForPrefsFragment.class);
+            startActivity(intent);
         } else if (id == R.id.nav_contact) {
 
         } else if (id == R.id.nav_about) {

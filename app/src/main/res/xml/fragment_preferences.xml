@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:id="@+id/sync"
+        android:defaultValue="true"
+        android:key="pref_sync"
+        android:summary="I will change on switching"
+        android:title="Sync" />
+
+    <EditTextPreference
+        android:id="@+id/editText"
+        android:defaultValue="Def val"
+        android:key="pref_et"
+        android:summary="Text to edit"
+        android:title="Editable text" />
+
+    <Preference android:title="Go to google.com">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="http://www.google.com" />
+    </Preference>
+
+    <PreferenceScreen
+        android:key="button_voicemail_category_key"
+        android:persistent="false"
+        android:title="Another screen">
+        <EditTextPreference
+            android:id="@+id/editText2"
+            android:defaultValue="Def val"
+            android:key="pref_et"
+            android:summary="Text to edit"
+            android:title="Editable text" />
+        <!-- opens another nested subscreen -->
+        <PreferenceScreen
+            android:key="button_voicemail_setting_key"
+            android:persistent="false"
+            android:title="Another nested screen" />
+        <RingtonePreference
+            android:key="button_voicemail_ringtone_key"
+            android:ringtoneType="notification"
+            android:title="Notification" />
+    </PreferenceScreen>
+
+
+    <PreferenceCategory
+        android:key="pref_key_storage_settings"
+        android:title="Test Category title">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_key_auto_delete"
+            android:summary="Checkbox sum"
+            android:title="Checkbox tit" />
+        <Preference
+            android:dependency="pref_key_auto_delete"
+            android:key="pref_key_sms_delete_limit"
+            android:summary="Pref1 sum"
+            android:title="Pref1 tit" />
+        <Preference
+            android:dependency="pref_key_auto_delete"
+            android:key="pref_key_mms_delete_limit"
+            android:summary="Pref2 sum"
+            android:title="Pref2 tit" />
+    </PreferenceCategory>
+
+
+</PreferenceScreen>
