@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <!--Чтобы оставалось выделение-->
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/nav_templates"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/templates" />
+        <item
+            android:id="@+id/nav_import_export"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/import_export" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/settings" />
+    </group>
+
+    <item android:title="@string/help">
+        <menu>
+            <item
+                android:id="@+id/nav_contact"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/contact_developer" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="@string/about" />
+        </menu>
+    </item>
+
+</menu>
