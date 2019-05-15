@@ -14,10 +14,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.galukhin.introv.R;
+import com.galukhin.introv.presenter.INavigationDrawerPresenter;
+import com.galukhin.introv.presenter.NavigationDrawerPresenter;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private String TAG = "INTROVERT:" + getClass().getSimpleName();
 
+    private INavigationDrawerPresenter navDrawerPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
+        navDrawerPresenter = new NavigationDrawerPresenter();
 
         /* ------ PAGER ------ */
         ViewPager vpPager = findViewById(R.id.vpPager);
@@ -95,10 +99,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_import_export) {
 
         } else if (id == R.id.nav_templates) {
-
+            navDrawerPresenter.onTemplatesSelected(MainActivity.this);
         } else if (id == R.id.nav_settings) {
-            intent = new Intent(MainActivity.this, ActivityForPrefsFragment.class);
-            startActivity(intent);
+            navDrawerPresenter.onSettingsSelected(MainActivity.this);
         } else if (id == R.id.nav_contact) {
 
         } else if (id == R.id.nav_about) {
